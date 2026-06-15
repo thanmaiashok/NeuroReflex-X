@@ -1,0 +1,14 @@
+numpy
+matplotlib
+torch
+pyyaml
+fastapi
+uvicorn
+pydantic
+python-dotenv
+groq
+stable-baselines3[extra]
+pettingzoo[classic]
+supersuit
+ultralytics
+pillow

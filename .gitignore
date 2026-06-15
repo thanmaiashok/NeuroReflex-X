@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.py[cod]
+backend/rl_training/models/
+backend/rl_training/logs/
+backend/rl_training/rl_stdout.log
+backend/rl_training/rl_status.json
+node_modules/
+frontend/dist/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.weights

@@ -1,0 +1,5 @@
+time_step: 0.1
+noise_level: 0.05
+occlusion_probability: 0.1
+num_targets: 1
+max_range: 100.0

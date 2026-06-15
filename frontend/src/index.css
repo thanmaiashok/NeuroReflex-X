@@ -1,0 +1,86 @@
+/* ─── Design Tokens ─── */
+:root {
+  --bg-0: #080808;
+  --bg-1: #0f0f0f;
+  --bg-2: #161616;
+  --bg-3: #1e1e1e;
+  --border-0: #1a1a1a;
+  --border-1: #262626;
+  --border-2: #333333;
+  --text-0: #f2f2f2;
+  --text-1: #888888;
+  --text-2: #444444;
+  --white: #ffffff;
+  --status-ok: #6fcf97;
+  --status-warn: #f2c94c;
+  --status-strike: #f2994a;
+  --status-danger: #eb5757;
+  --status-info: #56ccf2;
+  --status-idle: #555555;
+  --accent: #ffffff;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  --radius: 0px;
+  --transition: 140ms ease;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-0);
+  color: var(--text-0);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-2); }
+
+/* ─── Base button reset ─── */
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), opacity var(--transition);
+}
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ─── Mono data text ─── */
+.mono { font-family: var(--font-mono); }
+
+/* ─── Subtle blink ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.blink { animation: blink 1.4s ease-in-out infinite; }
+
+/* ─── Page fade ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: fadeIn 180ms ease both; }
+
+/* ─── Pulse dot ─── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+.pulse { animation: pulse-dot 1.8s ease-in-out infinite; }
