@@ -1,5 +1,8 @@
 # NeuroReflex-X
 
+<p align="center"><img src="docs/flow.svg" alt="Animated NeuroReflex-X pipeline: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate" width="100%"/></p>
+<p align="center"><sub>10-second tour: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate</sub></p>
+
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python) ![Node](https://img.shields.io/badge/Node-18+-339933?logo=nodedotjs) ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi) ![License](https://img.shields.io/badge/License-MIT-green)
 
 **Hybrid Reflex-Cognitive Drone Pursuit Framework**
