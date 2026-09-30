@@ -1,4 +1,5 @@
 <p align="center"><img src="docs/flow.svg" alt="Animated NeuroReflex-X pipeline: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate" width="100%"/></p>
+
 <p align="center"><sub>10-second tour: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate</sub></p>
 
 <p align="center"><img src="docs/mc/intro.svg" width="100%" alt="Bio-inspired autonomous drone tracking simulation. Fuses fast reflex pathways (hawk, locust, dragonfly neuroscience) with a slow cognitive prediction brain."/></p>
