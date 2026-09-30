@@ -1,17 +1,12 @@
-# NeuroReflex-X
-
 <p align="center"><img src="docs/flow.svg" alt="Animated NeuroReflex-X pipeline: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate" width="100%"/></p>
 <p align="center"><sub>10-second tour: Perceive → Reflex → Predict → Fuse → Optimize → Evaluate</sub></p>
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python) ![Node](https://img.shields.io/badge/Node-18+-339933?logo=nodedotjs) ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi) ![License](https://img.shields.io/badge/License-MIT-green)
+<p align="center"><img src="docs/mc/intro.svg" width="100%" alt="Bio-inspired autonomous drone tracking simulation. Fuses fast reflex pathways (hawk, locust, dragonfly neuroscience) with a slow cognitive prediction brain."/></p>
 
-**Hybrid Reflex-Cognitive Drone Pursuit Framework**
+<p align="center"><img src="docs/mc/features.svg" width="100%" alt="Key features"/></p>
 
-Bio-inspired autonomous drone tracking simulation. Fuses fast reflex pathways (hawk/locust/dragonfly neuroscience) with a slow cognitive prediction brain. Built for research — demonstrates how hybrid neural architectures outperform pure-prediction or pure-reactive trackers.
-
----
-
-## Quick Start
+<a id="quick-start"></a>
+<h2><img src="docs/mc/h2-quick-start.svg" width="100%" alt="Quick Start"/></h2>
 
 Run from CMD (not PowerShell):
 
@@ -30,7 +25,8 @@ Stop everything:
 kill.bat
 ```
 
-### Requirements
+<a id="requirements"></a>
+<h3><img src="docs/mc/h3-requirements.svg" width="100%" alt="Requirements"/></h3>
 
 - Python 3.10+
 - Node.js 18+
@@ -40,9 +36,8 @@ kill.bat
 set GROQ_API_KEY=your_key_here
 ```
 
----
-
-## Project Structure
+<a id="project-structure"></a>
+<h2><img src="docs/mc/h2-project-structure.svg" width="100%" alt="Project Structure"/></h2>
 
 ```
 NeuroReflex-X/
@@ -128,11 +123,11 @@ NeuroReflex-X/
 └── kill.bat                   # Kill all services
 ```
 
----
+<a id="core-algorithms"></a>
+<h2><img src="docs/mc/h2-core-algorithms.svg" width="100%" alt="Core Algorithms"/></h2>
 
-## Core Algorithms
-
-### 1. DFAF — Dual-Fovea Adaptive Focus
+<a id="1-dfaf--dual-fovea-adaptive-focus"></a>
+<h3><img src="docs/mc/h3-1-dfaf-dual-fovea-adaptive-focus.svg" width="100%" alt="1. DFAF — Dual-Fovea Adaptive Focus"/></h3>
 
 `backend/reflex_system/dual_fovea_selector.py`
 
@@ -148,7 +143,8 @@ adaptive_context = base_radius + (accel_mag * 15.0)
 secondary = primary + vel_direction * (1.0 + vel_mag * 2.0)
 ```
 
-### 2. IBIP — Intent-Based Interception Predictor
+<a id="2-ibip--intent-based-interception-predictor"></a>
+<h3><img src="docs/mc/h3-2-ibip-intent-based-interception-predictor.svg" width="100%" alt="2. IBIP — Intent-Based Interception Predictor"/></h3>
 
 `backend/cognitive_core/ibip_predictor.py`
 
@@ -169,7 +165,8 @@ EMA-chain kinematic predictor. Six filtering stages:
 | 5–15m    | linear interpolation | | Smooth transition |
 | > 15m    | 0.20      | 0.20      | Smooth long-range tracking |
 
-### 3. ACCE — Adaptive Confidence Collapse Engine
+<a id="3-acce--adaptive-confidence-collapse-engine"></a>
+<h3><img src="docs/mc/h3-3-acce-adaptive-confidence-collapse-engine.svg" width="100%" alt="3. ACCE — Adaptive Confidence Collapse Engine"/></h3>
 
 `backend/evaluation/acce_engine.py`
 
@@ -183,17 +180,18 @@ Hysteresis-based confidence system. Prevents flicker (doesn't collapse on every 
 
 On collapse: IBIP resets, LGMD resets, system falls back to raw noisy position.
 
-### 4. SDPL — Stereo Depth Precision Lock
+<a id="4-sdpl--stereo-depth-precision-lock"></a>
+<h3><img src="docs/mc/h3-4-sdpl-stereo-depth-precision-lock.svg" width="100%" alt="4. SDPL — Stereo Depth Precision Lock"/></h3>
 
 `backend/evaluation/sdpl_module.py`
 
 Physics-jump anomaly detector. If target moves more than `max_phys_jump=2.0m` in a single tick, flags as depth anomaly. ACCE immediately hard-collapses confidence to 0.0 on anomaly.
 
----
+<a id="nature-inspired-behavior-extensions"></a>
+<h2><img src="docs/mc/h2-nature-inspired-behavior-extensions.svg" width="100%" alt="Nature-Inspired Behavior Extensions"/></h2>
 
-## Nature-Inspired Behavior Extensions
-
-### Dragonfly CBA Interception
+<a id="dragonfly-cba-interception"></a>
+<h3><img src="docs/mc/h3-dragonfly-cba-interception.svg" width="100%" alt="Dragonfly CBA Interception"/></h3>
 
 `backend/api.py` — TRACKING phase
 
@@ -206,13 +204,15 @@ intercept_pt = chase_target + target_vel * look_ahead
 
 95% catch-rate in natural dragonflies. Prevents target escaping with lateral turns.
 
-### Bat Ranging
+<a id="bat-ranging"></a>
+<h3><img src="docs/mc/h3-bat-ranging.svg" width="100%" alt="Bat Ranging"/></h3>
 
 `backend/cognitive_core/ibip_predictor.py — adapt_to_distance()`
 
 Dynamic IBIP alpha based on proximity. Closer target = faster EMA response. Mimics bat echolocation pulse rate increase during closing approach.
 
-### Peregrine Log-Spiral Dive
+<a id="peregrine-log-spiral-dive"></a>
+<h3><img src="docs/mc/h3-peregrine-log-spiral-dive.svg" width="100%" alt="Peregrine Log-Spiral Dive"/></h3>
 
 `backend/api.py` — STRIKING phase
 
@@ -225,7 +225,8 @@ spiral_angle  = direct_bearing + spiral_offset
 
 Tightens as distance closes (offset shrinks toward 0 at impact).
 
-### LGMD Looming Detector
+<a id="lgmd-looming-detector"></a>
+<h3><img src="docs/mc/h3-lgmd-looming-detector.svg" width="100%" alt="LGMD Looming Detector"/></h3>
 
 `backend/reflex_system/lgmd_looming.py`
 
@@ -238,9 +239,8 @@ looming_rate = EMA(angular_size_delta)
 
 Fires when rate > 0.25. Injects proactive confidence drain into ACCE _before_ prediction error rises — faster collapse trigger than error-based drain alone.
 
----
-
-## Simulation Engine
+<a id="simulation-engine"></a>
+<h2><img src="docs/mc/h2-simulation-engine.svg" width="100%" alt="Simulation Engine"/></h2>
 
 `backend/simulation_engine/motion_generator.py`
 
@@ -266,9 +266,8 @@ angle = sin(x*0.05 + t*0.5)*1.5 + cos(z*0.05 - t*0.3)*1.5
 magnitude = 3.0 + sin(x*0.1 - t) + cos(z*0.1 + t*1.2)
 ```
 
----
-
-## Drone Pursuit State Machine
+<a id="drone-pursuit-state-machine"></a>
+<h2><img src="docs/mc/h2-drone-pursuit-state-machine.svg" width="100%" alt="Drone Pursuit State Machine"/></h2>
 
 ```
 SEARCHING → TRACKING → COLLAPSED → STRIKING → ENGAGING → DESTROYED → (respawn 5s) → SEARCHING
@@ -285,9 +284,8 @@ SEARCHING → TRACKING → COLLAPSED → STRIKING → ENGAGING → DESTROYED →
 
 **Hybrid switch logic**: Reflex activates only when confidence ≥ 0.99 (target 100% fixed). Otherwise cognitive brain (IBIP predictor) is active.
 
----
-
-## REST API
+<a id="rest-api"></a>
+<h2><img src="docs/mc/h2-rest-api.svg" width="100%" alt="REST API"/></h2>
 
 Base URL: `http://localhost:8000`
 
@@ -328,9 +326,8 @@ Base URL: `http://localhost:8000`
 | `obstacles` | `[[x,z], ...]` | Obstacle positions |
 | `history_true` | `[{...}]` | Rolling 50-frame telemetry |
 
----
-
-## Frontend
+<a id="frontend"></a>
+<h2><img src="docs/mc/h2-frontend.svg" width="100%" alt="Frontend"/></h2>
 
 **Stack**: React 19, Vite, Three.js, @react-three/fiber, @react-three/drei, Recharts
 
@@ -363,9 +360,8 @@ Base URL: `http://localhost:8000`
 | `HUD.jsx` | Live text telemetry: coordinates, precision, confidence, status |
 | `Scene3D.jsx` | 3D environment: terrain, obstacles, target sphere |
 
----
-
-## RL Training
+<a id="rl-training"></a>
+<h2><img src="docs/mc/h2-rl-training.svg" width="100%" alt="RL Training"/></h2>
 
 `backend/rl_training/`
 
@@ -384,9 +380,8 @@ set GROQ_API_KEY=your_key_here
 start.bat
 ```
 
----
-
-## Evaluation & Baselines
+<a id="evaluation--baselines"></a>
+<h2><img src="docs/mc/h2-evaluation-baselines.svg" width="100%" alt="Evaluation &amp; Baselines"/></h2>
 
 `backend/evaluation/` — online metrics computed each tick:
 - **MOTA/MOTP** (`mota_motp_metrics.py`) — standard MOT benchmark metrics
@@ -406,9 +401,8 @@ start.bat
 - `stress_test_runner.py` — high wind/obstacle density
 - `baseline_comparison_runner.py` — NRX vs baselines
 
----
-
-## Architecture Overview
+<a id="architecture-overview"></a>
+<h2><img src="docs/mc/h2-architecture-overview.svg" width="100%" alt="Architecture Overview"/></h2>
 
 ```
 Sensor Input (noisy position)
@@ -439,12 +433,13 @@ Sensor Input (noisy position)
      └── STRIKING  → Peregrine log-spiral dive
 ```
 
----
-
-## Known Constraints
+<a id="known-constraints"></a>
+<h2><img src="docs/mc/h2-known-constraints.svg" width="100%" alt="Known Constraints"/></h2>
 
 - `start.bat` must run from CMD, not PowerShell (`start` command behaves differently)
 - `web/` directory may still exist if VS Code locked it during restructure — safe to delete manually
 - RL training requires `GROQ_API_KEY`; falls back to hardcoded difficulty config if API fails
 - Map terrain is procedural (sine-wave), not loaded from file — deterministic per position
 - Drone coordinate system: `[X, Z_world, Altitude]` — Y axis is vertical (Three.js convention)
+
+<p align="center"><a href="https://github.com/thanmaiashok"><img src="docs/mc/footer.svg" width="100%" alt="Built by Thanmai A, founder of FoxynAI"/></a></p>
