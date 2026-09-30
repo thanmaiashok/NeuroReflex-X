@@ -1,5 +1,6 @@
-file_path: D:\NeuroReflex-X\README.md
-content: # NeuroReflex-X
+# NeuroReflex-X
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python) ![Node](https://img.shields.io/badge/Node-18+-339933?logo=nodedotjs) ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi) ![License](https://img.shields.io/badge/License-MIT-green)
 
 **Hybrid Reflex-Cognitive Drone Pursuit Framework**
 
@@ -444,6 +445,3 @@ Sensor Input (noisy position)
 - RL training requires `GROQ_API_KEY`; falls back to hardcoded difficulty config if API fails
 - Map terrain is procedural (sine-wave), not loaded from file — deterministic per position
 - Drone coordinate system: `[X, Z_world, Altitude]` — Y axis is vertical (Three.js convention)
-
-
-File has not been read yet. Read it first before writing to it.
