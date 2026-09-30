@@ -6,7 +6,7 @@
 
 <p align="center"><img src="docs/px3/features.svg" width="100%" alt="Key features"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="quick-start"></a>
 <h2><img src="docs/px3/h2-quick-start.svg" width="100%" alt="Quick Start"/></h2>
@@ -26,14 +26,14 @@
 
 <p align="center"><img src="docs/px3/c-03.svg" width="100%" alt="code: set GROQ_API_KEY=your_key_here "/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="project-structure"></a>
 <h2><img src="docs/px3/h2-project-structure.svg" width="100%" alt="Project Structure"/></h2>
 
 <p align="center"><img src="docs/px3/c-04.svg" width="100%" alt="code: NeuroReflex-X/ ├── backend/ # FastAPI simulation engine │ ├── api.py # REST API endpoints + main simulation loop │ ├── api_state.py # Global SimulationState sin"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="core-algorithms"></a>
 <h2><img src="docs/px3/h2-core-algorithms.svg" width="100%" alt="Core Algorithms"/></h2>
@@ -60,7 +60,7 @@
 
 <p align="center"><img src="docs/px3/t-07.svg" width="100%" alt="backend/evaluation/sdpl_module.py Physics-jump anomaly detector. If target moves more than max_phys_jump=2.0m in a single tick, flags as depth anomaly. ACCE immediately hard-collapses confidence to 0.0 on anomaly."/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="nature-inspired-behavior-extensions"></a>
 <h2><img src="docs/px3/h2-nature-inspired-behavior-extensions.svg" width="100%" alt="Nature-Inspired Behavior Extensions"/></h2>
@@ -97,7 +97,7 @@
 
 <p align="center"><img src="docs/px3/t-14.svg" width="100%" alt="Fires when rate &gt; 0.25. Injects proactive confidence drain into ACCE before prediction error rises - faster collapse trigger than error-based drain alone."/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="simulation-engine"></a>
 <h2><img src="docs/px3/h2-simulation-engine.svg" width="100%" alt="Simulation Engine"/></h2>
@@ -110,7 +110,7 @@
 
 <p align="center"><img src="docs/px3/c-10.svg" width="100%" alt="code: angle = sin(x*0.05 + t*0.5)*1.5 + cos(z*0.05 - t*0.3)*1.5 magnitude = 3.0 + sin(x*0.1 - t) + cos(z*0.1 + t*1.2) "/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="drone-pursuit-state-machine"></a>
 <h2><img src="docs/px3/h2-drone-pursuit-state-machine.svg" width="100%" alt="Drone Pursuit State Machine"/></h2>
@@ -119,7 +119,7 @@
 
 <p align="center"><img src="docs/px3/t-17.svg" width="100%" alt="State | Speed | Altitude | Behavior SEARCHING | - | 2.5m | Waiting for target activation TRACKING | 5m/s | 2.5m | Dragonfly CBA intercept COLLAPSED | 5m/s | 2.5m | Noisy pos fallback, re-acquiring STRIKING | 25m/s | target CoM | Peregrine log-spiral dive ENGAGING | - | - | 1.5s proximity lock (15 ticks at &lt;1m) DESTROYED | - | - | 5s respawn timer, target relocates Hybrid switch logic: Reflex activates only when confidence &gt;= 0.99 (target 100% fixed). Otherwise cognitive brain (IBIP predictor) is active."/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="rest-api"></a>
 <h2><img src="docs/px3/h2-rest-api.svg" width="100%" alt="REST API"/></h2>
@@ -128,14 +128,14 @@
 
 <p align="center"><img src="docs/px3/t-19.svg" width="100%" alt="Field | Type | Description true_pos | [x, z] | Ground truth target position predicted_pos | [x, z] | IBIP prediction drone_real_pos | [x, z, alt] | Drone 3D position destination | [x, z, terrain_h] | Target + terrain height stability | float | ACCE confidence 0-1 precision | float | Prediction accuracy 0-1 collapse_status | bool | ACCE collapsed flag primary_fovea | [x, z] | DFAF primary focus secondary_fovea | [x, z] | DFAF context focus focus_separation | float | Distance between foveas context_radius | float | Adaptive context window size reflex_energy | float | 1 - confidence (reflex activation) sonar_active | bool | Reflex &gt; 0.5 threshold status | string | SEARCHING/TRACKING/COLLAPSED/STRIKING/ENGAGING/DESTROYED obstacles | [[x,z], ...] | Obstacle positions history_true | [{...}] | Rolling 50-frame telemetry"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="frontend"></a>
 <h2><img src="docs/px3/h2-frontend.svg" width="100%" alt="Frontend"/></h2>
 
 <p align="center"><img src="docs/px3/t-20.svg" width="100%" alt="Stack: React 19, Vite, Three.js, @react-three/fiber, @react-three/drei, Recharts Design tokens (frontend/src/index.css): Token | Value | Use --bg-0 | #0a0a0a | Root background --bg-1 | #111111 | Card/panel background --bg-2 | #1a1a1a | Elevated surface --bg-3 | #242424 | Interactive hover --text-0 | #f0f0f0 | Primary text --text-1 | #a0a0a0 | Secondary text --text-2 | #606060 | Muted/disabled --status-ok | #6fcf97 | Healthy / confident --status-warn | #f2c94c | Warning / medium --status-strike | #bb86fc | Striking phase --status-danger | #eb5757 | Danger / collapsed --status-info | #56ccf2 | Info / tracking Components: Component | Description Dashboard.jsx | Main layout: sidebar nav, live clock, inline metrics ControlPanel.jsx | Target/obstacle/scenario/wind/RL buttons Map2D.jsx | Canvas 2D: drone + target trails, fovea rings, prediction vector, range rings, scale bar OpticSensor.jsx | Three.js drone-mounted gimbal camera: follows real altitude, lerp smoothing, DFAF HUD overlays, confidence bar DeepAnalyticsPanel.jsx | Recharts: reflex/brain/confidence/SDPL time series, PRECISION metric row HUD.jsx | Live text telemetry: coordinates, precision, confidence, status Scene3D.jsx | 3D e"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="rl-training"></a>
 <h2><img src="docs/px3/h2-rl-training.svg" width="100%" alt="RL Training"/></h2>
@@ -144,27 +144,27 @@
 
 <p align="center"><img src="docs/px3/c-12.svg" width="100%" alt="code: set GROQ_API_KEY=your_key_here start.bat "/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="evaluation--baselines"></a>
 <h2><img src="docs/px3/h2-evaluation-baselines.svg" width="100%" alt="Evaluation &amp; Baselines"/></h2>
 
 <p align="center"><img src="docs/px3/t-22.svg" width="100%" alt="backend/evaluation/ - online metrics computed each tick: MOTA/MOTP (mota_motp_metrics.py) - standard MOT benchmark metrics Precision (precision_metrics.py) - normalized prediction accuracy Drift analysis (drift_analysis.py) - EMA error trend Stability curve (stability_curve.py) - confidence over time Ablation study (ablation_study.py) - component knockout comparisons backend/baselines/ - comparison trackers: Kalman Filter (kalman_tracker.py) SORT tracker (sort_tracker.py) Simple LSTM (simple_lstm_tracker.py) experiments/ - offline batch runners for paper-quality results: run_full_experiment.py - full pipeline ablation_runner.py - systematic component removal stress_test_runner.py - high wind/obstacle density baseline_comparison_runner.py - NRX vs baselines"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="architecture-overview"></a>
 <h2><img src="docs/px3/h2-architecture-overview.svg" width="100%" alt="Architecture Overview"/></h2>
 
 <p align="center"><img src="docs/px3/c-13.svg" width="100%" alt="code: Sensor Input (noisy position) │ ▼ SDPL ──── physics anomaly? ──→ ACCE hard collapse │ ▼ IBIP ──── EMA kinematic prediction ├── adapt_to_distance() [Bat Ranging]"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <a id="known-constraints"></a>
 <h2><img src="docs/px3/h2-known-constraints.svg" width="100%" alt="Known Constraints"/></h2>
 
 <p align="center"><img src="docs/px3/t-23.svg" width="100%" alt="start.bat must run from CMD, not PowerShell (start command behaves differently) web/ directory may still exist if VS Code locked it during restructure - safe to delete manually RL training requires GROQ_API_KEY; falls back to hardcoded difficulty config if API fails Map terrain is procedural (sine-wave), not loaded from file - deterministic per position Drone coordinate system: [X, Z_world, Altitude] - Y axis is vertical (Three.js convention)"/></p>
 
-<p align="center"><img src="docs/px3/gap.svg" width="1" height="16" alt=""/></p>
+<p align="center"><img src="docs/px3/divider.svg" width="100%" alt=""/></p>
 
 <p align="center"><a href="https://github.com/thanmaiashok"><img src="docs/px3/footer.svg" width="100%" alt="Built by Thanmai A, founder of FoxynAI"/></a></p>
