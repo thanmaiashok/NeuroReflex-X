@@ -11,53 +11,35 @@
 
 <p align="center"><img src="docs/px3/t-01.svg" width="100%" alt="Run from CMD (not PowerShell):"/></p>
 
-<p align="center"><img src="docs/px3/c-01.svg" width="100%" alt="code: start.bat "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bat.svg" width="100%" alt="bat code"/></p>
 
 ```bat
 start.bat
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-02.svg" width="100%" alt="Opens: Frontend: http://localhost:5173 Backend API: http://localhost:8000 API Docs: http://localhost:8000/docs Stop everything:"/></p>
 
-<p align="center"><img src="docs/px3/c-02.svg" width="100%" alt="code: kill.bat "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bat.svg" width="100%" alt="bat code"/></p>
 
 ```bat
 kill.bat
 ```
-
-</details>
 
 <a id="requirements"></a>
 <h3><img src="docs/px3/h3-requirements.svg" width="100%" alt="Requirements"/></h3>
 
 <p align="center"><img src="docs/px3/t-03.svg" width="100%" alt="Python 3.10+ Node.js 18+ GROQ_API_KEY env var (only needed for RL curriculum training)"/></p>
 
-<p align="center"><img src="docs/px3/c-03.svg" width="100%" alt="code: set GROQ_API_KEY=your_key_here "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bat.svg" width="100%" alt="bat code"/></p>
 
 ```bat
 set GROQ_API_KEY=your_key_here
 ```
 
-</details>
-
 <a id="project-structure"></a>
 <h2><img src="docs/px3/h2-project-structure.svg" width="100%" alt="Project Structure"/></h2>
 
-<p align="center"><img src="docs/px3/c-04.svg" width="100%" alt="code: NeuroReflex-X/ ├── backend/ # FastAPI simulation engine │ ├── api.py # REST API endpoints + main simulation loop │ ├── api_state.py # Global SimulationState sin"/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 NeuroReflex-X/
@@ -143,8 +125,6 @@ NeuroReflex-X/
 └── kill.bat                   # Kill all services
 ```
 
-</details>
-
 <a id="core-algorithms"></a>
 <h2><img src="docs/px3/h2-core-algorithms.svg" width="100%" alt="Core Algorithms"/></h2>
 
@@ -153,17 +133,12 @@ NeuroReflex-X/
 
 <p align="center"><img src="docs/px3/t-04.svg" width="100%" alt="backend/reflex_system/dual_fovea_selector.py Inspired by hawk binocular vision. Maintains two simultaneous attention zones: Primary fovea - precision lock on IBIP predicted position Secondary fovea - context window displaced along velocity direction When motion accelerates, secondary fovea expands outward (peripheral awareness). When calm, both converge for tight lock. The separation metric drives the UI fovea rings."/></p>
 
-<p align="center"><img src="docs/px3/c-05.svg" width="100%" alt="code: adaptive_context = base_radius + (accel_mag * 15.0) secondary = primary + vel_direction * (1.0 + vel_mag * 2.0) "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 adaptive_context = base_radius + (accel_mag * 15.0)
 secondary = primary + vel_direction * (1.0 + vel_mag * 2.0)
 ```
-
-</details>
 
 <a id="2-ibip--intent-based-interception-predictor"></a>
 <h3><img src="docs/px3/h3-2-ibip-intent-based-interception-predictor.svg" width="100%" alt="2. IBIP — Intent-Based Interception Predictor"/></h3>
@@ -188,17 +163,12 @@ secondary = primary + vel_direction * (1.0 + vel_mag * 2.0)
 
 <p align="center"><img src="docs/px3/t-08.svg" width="100%" alt="backend/api.py - TRACKING phase Constant Bearing Angle geometry. Instead of chasing where target is, aims at where it will be when drone arrives:"/></p>
 
-<p align="center"><img src="docs/px3/c-06.svg" width="100%" alt="code: look_ahead = dist_xz / drone_speed intercept_pt = chase_target + target_vel * look_ahead "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-python.svg" width="100%" alt="python code"/></p>
 
 ```python
 look_ahead = dist_xz / drone_speed
 intercept_pt = chase_target + target_vel * look_ahead
 ```
-
-</details>
 
 <p align="center"><img src="docs/px3/t-09.svg" width="100%" alt="95% catch-rate in natural dragonflies. Prevents target escaping with lateral turns."/></p>
 
@@ -212,17 +182,12 @@ intercept_pt = chase_target + target_vel * look_ahead
 
 <p align="center"><img src="docs/px3/t-11.svg" width="100%" alt="backend/api.py - STRIKING phase Curved attack trajectory during final dive. Harder for target to evade than straight-line approach. Keeps target in peripheral fovea longer:"/></p>
 
-<p align="center"><img src="docs/px3/c-07.svg" width="100%" alt="code: spiral_offset = radians(15.0) * min(1.0, dist / 10.0) spiral_angle = direct_bearing + spiral_offset "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-python.svg" width="100%" alt="python code"/></p>
 
 ```python
 spiral_offset = radians(15.0) * min(1.0, dist / 10.0)
 spiral_angle  = direct_bearing + spiral_offset
 ```
-
-</details>
 
 <p align="center"><img src="docs/px3/t-12.svg" width="100%" alt="Tightens as distance closes (offset shrinks toward 0 at impact)."/></p>
 
@@ -231,17 +196,12 @@ spiral_angle  = direct_bearing + spiral_offset
 
 <p align="center"><img src="docs/px3/t-13.svg" width="100%" alt="backend/reflex_system/lgmd_looming.py Locust Giant Movement Detector. Computes angular expansion rate of target:"/></p>
 
-<p align="center"><img src="docs/px3/c-08.svg" width="100%" alt="code: angular_size = ref_size / dist # small-angle approx looming_rate = EMA(angular_size_delta) "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 angular_size = ref_size / dist       # small-angle approx
 looming_rate = EMA(angular_size_delta)
 ```
-
-</details>
 
 <p align="center"><img src="docs/px3/t-14.svg" width="100%" alt="Fires when rate &gt; 0.25. Injects proactive confidence drain into ACCE before prediction error rises - faster collapse trigger than error-based drain alone."/></p>
 
@@ -250,44 +210,29 @@ looming_rate = EMA(angular_size_delta)
 
 <p align="center"><img src="docs/px3/t-15.svg" width="100%" alt="backend/simulation_engine/motion_generator.py Target physics - Reynolds-style steering: Wander force (smooth probabilistic heading changes) Separation force (obstacle avoidance via repulsion) Seek/flee force toward/from drone Mass=70kg, max_speed=2.5m/s, max_force=6.0N Terrain - deterministic height map via overlapping sine waves:"/></p>
 
-<p align="center"><img src="docs/px3/c-09.svg" width="100%" alt="code: h = sin(x*0.15)*2.5 + cos(y*0.18)*1.5 + sin((x+y)*0.30)*0.5 "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-python.svg" width="100%" alt="python code"/></p>
 
 ```python
 h = sin(x*0.15)*2.5 + cos(y*0.18)*1.5 + sin((x+y)*0.30)*0.5
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-16.svg" width="100%" alt="Scenarios: Forest: 15 random cylindrical obstacles Urban: grid-snapped obstacles (40 count) Custom: add/clear via API Spatial wind - 2D vector field approximating fluid dynamics:"/></p>
 
-<p align="center"><img src="docs/px3/c-10.svg" width="100%" alt="code: angle = sin(x*0.05 + t*0.5)*1.5 + cos(z*0.05 - t*0.3)*1.5 magnitude = 3.0 + sin(x*0.1 - t) + cos(z*0.1 + t*1.2) "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-python.svg" width="100%" alt="python code"/></p>
 
 ```python
 angle = sin(x*0.05 + t*0.5)*1.5 + cos(z*0.05 - t*0.3)*1.5
 magnitude = 3.0 + sin(x*0.1 - t) + cos(z*0.1 + t*1.2)
 ```
 
-</details>
-
 <a id="drone-pursuit-state-machine"></a>
 <h2><img src="docs/px3/h2-drone-pursuit-state-machine.svg" width="100%" alt="Drone Pursuit State Machine"/></h2>
 
-<p align="center"><img src="docs/px3/c-11.svg" width="100%" alt="code: SEARCHING → TRACKING → COLLAPSED → STRIKING → ENGAGING → DESTROYED → (respawn 5s) → SEARCHING "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 SEARCHING → TRACKING → COLLAPSED → STRIKING → ENGAGING → DESTROYED → (respawn 5s) → SEARCHING
 ```
-
-</details>
 
 <p align="center"><img src="docs/px3/t-17.svg" width="100%" alt="State | Speed | Altitude | Behavior SEARCHING | - | 2.5m | Waiting for target activation TRACKING | 5m/s | 2.5m | Dragonfly CBA intercept COLLAPSED | 5m/s | 2.5m | Noisy pos fallback, re-acquiring STRIKING | 25m/s | target CoM | Peregrine log-spiral dive ENGAGING | - | - | 1.5s proximity lock (15 ticks at &lt;1m) DESTROYED | - | - | 5s respawn timer, target relocates Hybrid switch logic: Reflex activates only when confidence &gt;= 0.99 (target 100% fixed). Otherwise cognitive brain (IBIP predictor) is active."/></p>
 
@@ -308,17 +253,12 @@ SEARCHING → TRACKING → COLLAPSED → STRIKING → ENGAGING → DESTROYED →
 
 <p align="center"><img src="docs/px3/t-21.svg" width="100%" alt="backend/rl_training/ Environment: PettingZoo parallel env - drone (predator) vs target (prey) Algorithm: PPO via Stable Baselines 3 Device: CUDA if available, else CPU Curriculum: Groq Llama-3.3-70B generates scenario configs each epoch based on drone survival rate Output: backend/rl_training/models/drone_brain_cell_v1.zip Logs: backend/rl_training/rl_stdout.log Status: backend/rl_training/rl_status.json (polled by frontend) Requires GROQ_API_KEY environment variable. Set before launching:"/></p>
 
-<p align="center"><img src="docs/px3/c-12.svg" width="100%" alt="code: set GROQ_API_KEY=your_key_here start.bat "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bat.svg" width="100%" alt="bat code"/></p>
 
 ```bat
 set GROQ_API_KEY=your_key_here
 start.bat
 ```
-
-</details>
 
 <a id="evaluation--baselines"></a>
 <h2><img src="docs/px3/h2-evaluation-baselines.svg" width="100%" alt="Evaluation &amp; Baselines"/></h2>
@@ -328,10 +268,7 @@ start.bat
 <a id="architecture-overview"></a>
 <h2><img src="docs/px3/h2-architecture-overview.svg" width="100%" alt="Architecture Overview"/></h2>
 
-<p align="center"><img src="docs/px3/c-13.svg" width="100%" alt="code: Sensor Input (noisy position) │ ▼ SDPL ──── physics anomaly? ──→ ACCE hard collapse │ ▼ IBIP ──── EMA kinematic prediction ├── adapt_to_distance() [Bat Ranging]"/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 Sensor Input (noisy position)
@@ -361,8 +298,6 @@ Sensor Input (noisy position)
      ├── TRACKING  → Dragonfly CBA intercept
      └── STRIKING  → Peregrine log-spiral dive
 ```
-
-</details>
 
 <a id="known-constraints"></a>
 <h2><img src="docs/px3/h2-known-constraints.svg" width="100%" alt="Known Constraints"/></h2>
